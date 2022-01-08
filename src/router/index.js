@@ -127,7 +127,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+        path: 'https://github.com/yfhcoming/SE-Manage-backend',
         meta: { title: '外部链接', icon: 'link' }
       }
     ]
