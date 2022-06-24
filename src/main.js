@@ -19,6 +19,28 @@ import axios from 'axios'
 import VCharts from 'v-charts'
 import VueAxios from 'vue-axios'
 
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+// internal icons
+import { faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
+  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload ,
+  faMagnifyingGlass,faStar,faAnglesLeft,faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faCheck, faCheckCircle, faInfoCircle, faExclamationTriangle, faExclamationCircle,
+  faArrowUp, faAngleRight, faAngleLeft, faAngleDown,
+  faEye, faEyeSlash, faCaretDown, faCaretUp, faUpload,
+  faMagnifyingGlass,faStar,faAnglesLeft,faArrowLeft);
+Vue.component('vue-fontawesome', FontAwesomeIcon);
+
+Vue.use(Buefy, {
+  defaultIconComponent: 'vue-fontawesome',
+  defaultIconPack: 'fas',
+});
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -39,6 +61,7 @@ Vue.use(ElementUI, { locale })
 Vue.use(VueAxios, axios)
 
 Vue.use(VCharts)
+
 
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false

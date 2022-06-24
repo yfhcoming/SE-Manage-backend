@@ -55,7 +55,7 @@ export const constantRoutes = [
       meta: { title: '系统首页', icon: 'dashboard' }
     }]
   },
-  {
+  /*{
     path: '/user',
     component: Layout,
     redirect: '/user/user-manage',
@@ -86,8 +86,8 @@ export const constantRoutes = [
         meta: { title: '学生列表',icon: 'form' }
       },
     ]
-  },
-  {
+  },*/
+  /*{
     path: '/class',
     component: Layout,
     redirect: '/class/class-manage',
@@ -118,6 +118,44 @@ export const constantRoutes = [
         meta: { title: '课程学生列表',icon: 'table' }
       },
 
+    ]
+  },*/
+
+  {
+    path: '/base',
+    component: Layout,
+    redirect: '/base/class-manage',
+    name: 'base',
+    meta: {
+      title: 'base',
+      icon: 'base'
+    },
+    children: [
+      {
+        path: 'kbasbase',
+        component: ()=>import('@/views/base/kbasbase'),
+        name: 'kbasbase',
+        meta: { title: '知识库',icon: 'tree' }
+      },
+    ]
+  },
+
+  {
+    path: '/commu',
+    component: Layout,
+    redirect: '/commu/class-manage',
+    name: 'commu',
+    meta: {
+      title: 'commu',
+      icon: 'commu'
+    },
+    children: [
+      {
+        path: 'post',
+        component: ()=>import('@/views/base/post'),
+        name: 'post',
+        meta: { title: '社区交流',icon: 'el-icon-s-help' }
+      },
     ]
   },
 

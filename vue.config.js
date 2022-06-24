@@ -31,17 +31,60 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     proxy: {                 //设置代理，必须填
-      '/api': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+      '/Knowbase': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
         // target: 'http://106.15.6.161:8081',     //代理的目标地址
-        target: 'http://localhost:8081',     //代理的目标地址
+        target: 'http://localhost:5000',     //代理的目标地址
         changeOrigin: true,              //是否设置同源，输入是的
         pathRewrite: {                   //路径重写
-          '/api': ''                     //选择忽略拦截器里面的单词
+          '/Knowbase': '/Knowbase'                     //选择忽略拦截器里面的单词
+        },
+      },
+
+      '/d': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+        // target: 'http://106.15.6.161:8081',     //代理的目标地址
+        target: 'http://localhost:6000',     //代理的目标地址
+        changeOrigin: true,              //是否设置同源，输入是的
+        pathRewrite: {                   //路径重写
+          '/d': '/d'                     //选择忽略拦截器里面的单词
         }
-      }
+      },
+      '/docks': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+        // target: 'http://106.15.6.161:8081',     //代理的目标地址
+        target: 'http://localhost:6000',     //代理的目标地址
+        changeOrigin: true,              //是否设置同源，输入是的
+        pathRewrite: {                   //路径重写
+          '/docks': '/docks'                     //选择忽略拦截器里面的单词
+        }
+      },
+
+      '/post': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+        // target: 'http://106.15.6.161:8081',     //代理的目标地址
+        target: 'http://localhost:7000',     //代理的目标地址
+        changeOrigin: true,              //是否设置同源，输入是的
+        pathRewrite: {                   //路径重写
+          '/post': '/post'                     //选择忽略拦截器里面的单词
+        }
+      },
+      '/action': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+        // target: 'http://106.15.6.161:8081',     //代理的目标地址
+        target: 'http://localhost:7000',     //代理的目标地址
+        changeOrigin: true,              //是否设置同源，输入是的
+        pathRewrite: {                   //路径重写
+          '/action': '/action'                     //选择忽略拦截器里面的单词
+        }
+      },
+      '/moniter': {              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
+        // target: 'http://106.15.6.161:8081',     //代理的目标地址
+        target: 'http://localhost:7000',     //代理的目标地址
+        changeOrigin: true,              //是否设置同源，输入是的
+        pathRewrite: {                   //路径重写
+          '/moniter': '/moniter'                     //选择忽略拦截器里面的单词
+        }
+      },
+
     },
     port: port,
-    open: true,
+    open: false,
     overlay: {
       warnings: false,
       errors: true
